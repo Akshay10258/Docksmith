@@ -1,0 +1,7 @@
+FROM alpine:3.18
+WORKDIR /app
+ENV APP_ENV=production
+ENV GREETING=hello
+COPY app.py /app/
+RUN echo "App setup complete"
+CMD ["sh", "-c", "echo === Docksmith Container Running === && echo Greeting: $GREETING && echo Environment: $APP_ENV && echo WorkingDir: $(pwd)"]
